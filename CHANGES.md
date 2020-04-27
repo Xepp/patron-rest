@@ -8,4 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Flask
 - Unittesting
-- Config base file
+- Config
+- Exception handling
+- Decorator
+- Enumeration
+- Serializer
+- VO
+- Elastisearch adapter
+- Sentiment GET/PATCH api
