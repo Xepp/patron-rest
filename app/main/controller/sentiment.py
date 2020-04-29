@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint
 from flask import request
 
@@ -12,7 +13,9 @@ sentiment = Blueprint('sentiment', __name__)
 
 @sentiment.route('/random', methods=['GET'])
 def get_random():
-    doc = es_service.get_random_sentiment_doc(index='test')
+    doc = es_service.get_random_sentiment_doc(
+        index=os.getenv('ELASTIC_INDEX')
+    )
 
     res = GetSerializer().serialize(doc)
 
@@ -28,7 +31,7 @@ def update():
     sentiment = payload['sentiment']
 
     doc = es_service.update_sentiment_doc(
-        index='test',
+        index=os.getenv('ELASTIC_INDEX'),
         elastic_id=elastic_id,
         sentiment=sentiment
     )
