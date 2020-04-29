@@ -1,13 +1,8 @@
 import os
 
-from dotenv import load_dotenv
-
-
-load_dotenv()
-
 
 class BaseConfig:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'patron_secret_key')
+    SECRET_KEY = os.getenv('APP_SECRET_KEY', 'patron_secret_key')
 
 
 class DevelopmentConfig(BaseConfig):

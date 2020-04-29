@@ -6,13 +6,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Flask
-- Unittesting
-- Config
-- Exception handling
-- Decorator
-- Enumeration
-- Serializer
-- VO
-- Elastisearch adapter
+- Configuration unittest
 - Sentiment GET/PATCH api

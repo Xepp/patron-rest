@@ -1,11 +1,13 @@
 import os
-
+from dotenv import load_dotenv
 from werkzeug.exceptions import HTTPException
 from elasticsearch.exceptions import TransportError
 
 from app.main import create_app
 from app.main.controller.sentiment import sentiment
 
+
+load_dotenv()
 
 app = create_app(os.getenv('ENV') or 'dev')
 

@@ -1,5 +1,4 @@
 import unittest
-
 from flask import current_app
 from flask_testing import TestCase
 
@@ -13,7 +12,7 @@ class TestDevelopmentConfig(TestCase):
         return app
 
     def test_app_is_development(self):
-        self.assertFalse(app.config.get('SECRET_KEY') == 'secret_key')
+        self.assertFalse(app.config.get('APP_SECRET_KEY') == 'patron_secret_key')
         self.assertTrue(app.config.get('DEBUG') is True)
         self.assertFalse(current_app is None)
 
@@ -35,7 +34,7 @@ class TestTestingConfig(TestCase):
         return app
 
     def test_app_is_testing(self):
-        self.assertFalse(app.config.get('SECRET_KEY') == 'secret_key')
+        self.assertFalse(app.config.get('APP_SECRET_KEY') == 'secret_key')
         self.assertTrue(app.config.get('DEBUG') is True)
 
 
